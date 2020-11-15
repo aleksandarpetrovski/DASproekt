@@ -1,0 +1,15 @@
+Со овие команди креиравме shell скрипта за филтрирање на податоците од АПИ-то и за запишување во csv документ под името baza.csv. 
+Во понатамошното разивавње на апликацијата, ќе ја повикуваме скриптата за побрзо и полесно фитрлирање на пдоатоците.
+Со секое стартување на скриптата, се проверува дали постои базата, а доколку постои, старата база се бриши и се прави нова база, односно обновување на податоците.
+
+#/bin/bash
+
+if [ -f baza.csv ]
+then
+	rm baza.csv
+fi
+  
+osmfilter map.osm --keep="amenity=pharmacy or healthcare=pharmacy" | osmconvert - --all-to-nodes --csv="@id @lon @lat name" --csv-headline --csv-separator=", " | awk '{print $1 $2 $3 "Apteka"}' | sed -e '1s/Apteka/name/' -e 's/,/ /g' > baza.csv
+
+
+ 
