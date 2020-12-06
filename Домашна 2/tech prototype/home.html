@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Моја аптека</title>
+    <style>
+        .naslov{
+            background: red;
+            font-size: 60px;
+            color: white;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            font-family: Arial;
+
+        }
+        .vreme{
+            display: inline;
+
+            padding-left: 40px;
+            width: 20%;
+            background: red;
+            color: white;
+        }
+
+        .registracija{
+            display: inline;
+
+            padding-right: 40px;
+            text-align: left;
+            width: 20%;
+            background: red;
+            color: white;
+        }
+
+        .lokacija{
+            text-align: center;
+            background: red;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+            font-family: Arial;
+            width: 400px;
+            position: center;
+        }
+        .lokacija#dugmelokacija{
+            background-color: red;
+        }
+
+        .tip{
+
+        }
+
+        .tip#peski{
+
+
+            display: inline;
+        }
+        .tip#tocak{
+
+            display: inline;
+        }
+        .tip#kola{
+
+            display: inline;
+        }
+
+        .potvrdi{
+            text-align: center;
+            background: red;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+            font-family: Arial;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class = "naslov">Моја аптека</div>
+
+    <br>
+
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div>
+
+    <button class="registracija" onclick="location.href= 'najavailireg.html';" id = "dugmereg">Најaва Регистрација</button>
+<br>
+    <button class = "lokacija" onclick="location.href = 'vneslokacija.html';" id = "dugmelokacija">Внесете ја вашата локација</button>
+<br>
+    <div class = "tip">
+        <span id = "peski"><img src="peski.png" height="100" width="100"/></span>
+        <span id = "tocak"><img src="tocak.png" height="100" width="100"/></span>
+        <span id = "kola"><img src="kola.png" height="100" width="100"/></span>
+    </div>
+
+    <button class = "potvrdi">Потврди</button>
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    dt.format('DD M YYYY | hh:mm')
+</script>
+</html>
