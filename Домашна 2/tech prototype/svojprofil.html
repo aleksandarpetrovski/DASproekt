@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рути</title>
+</head>
+<body>
+
+    <div class = "naslov">Моја аптека</div>
+
+    <br>
+
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div>
+<br>
+
+    <div class="ruti">Зачувани рути: </div>
+<br>
+
+    <div class = "pocetok">Почеток: </div>
+    <div class = "vremetraenje">Времетраење: </div>
+    <div class = "dolzina">Должина: </div>
+    <div class = "sredstvo">Превозно средство: </div>
+
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    dt.format('DD M YYYY | hh:mm')
+</script>
+</html>

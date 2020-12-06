@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профил</title>
+</head>
+<body>
+    <div class = "naslov">Моја аптека</div>
+
+    <p></p>
+
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div>
+    <br>
+    <button class = "profil" onclick="location.href='svojprofil.html';">Профил</button>
+
+<br>
+
+    <div class = "lokacija">
+        <img src="lociraj.png" height="360" width="464"/>
+    </div>
+<br>
+
+    <button class = "zacuvaj">Зачувај навигација</button>
+    <button class = "zavrsi">Заврши навигација</button>
+    <button class = "nova"> Избери нова рута</button>
+<br>
+
+    <div class="vremetraenje">Времетраење: </div>
+    <div class = "dolzina">Должина: </div>
+    <div class = "izbranosredstvo">Избрано средство: </div>
+
+
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    dt.format('DD M YYYY | hh:mm')
+</script>
+</html>
