@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профил</title>
+    <style>
+        .naslov{
+            background: red;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-family: Arial;
+
+        }
+        .vreme{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            background: red;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            left: 50px;
+            font-family: Arial;
+        }
+
+        .profil{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-family: Arial;
+            border-color: red;
+        }
+
+        .zacuvaj{
+            display: block;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-family: Arial;
+            margin-top: -350px;
+            border-color: red;
+        }
+
+        .zavrsi{
+            display: block;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-family: Arial;
+            border-color: red;
+        }
+
+        .nova{
+            display: block;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-family: Arial;
+            border-color: red;
+        }
+
+        .vremetraenje{
+            padding-top: 30px;
+            display: block;
+            font-family: Arial;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .dolzina{
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: Arial;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .izbranosredstvo{
+            display: block;
+            font-family: Arial;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class = "naslov">Моја аптека</div>
+    <br>
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div> <br>
+    <button class = "profil" onclick="location.href='svojprofil.html';">Профил</button>
+<br>
+
+    <div class = "lokacija">
+        <iframe width="725" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=21.395916938781742%2C41.995445461816146%2C21.428790092468265%2C42.01394164046147&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
+    </div>
+<br>
+
+    <button class = "zacuvaj">Зачувај навигација</button>
+    <button class = "zavrsi">Заврши навигација</button>
+    <button class = "nova"> Избери нова рута</button>
+<br>
+<br>
+    <div class="vremetraenje">Времетраење: </div>
+    <div class = "dolzina">Должина: </div>
+    <div class = "izbranosredstvo">Избрано средство: </div>
+
+
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    dt.format('DD M YYYY | hh:mm')
+</script>
+</html>

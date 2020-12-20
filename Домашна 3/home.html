@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Моја аптека</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .naslov{
+            background: red;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-family: Arial;
+
+        }
+        .vreme{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            font-family: Arial;
+            background: red;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            left: 50px;
+        }
+
+        .registracija{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .lokacija{
+            text-align: center;
+            background: red;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+            font-family: Arial;
+            width: 400px;
+            position: relative;
+            left: 460px;
+
+        }
+        .lokacija#dugmelokacija{
+            background-color: red;
+        }
+
+        #lokadresa{
+            width: 500px;
+            position: relative;
+            left: 360px;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+        .tip{
+            width: 800px;
+            position: relative;
+            left: 413px;
+
+        }
+
+        .tip#peski{
+
+
+            display: inline;
+        }
+        .tip#tocak{
+
+            display: inline;
+        }
+        .tip#kola{
+
+            display: inline;
+        }
+
+        .potvrdi{
+            text-align: center;
+            background: red;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+            font-family: Arial;
+            position: relative;
+            left: 600px;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class = "naslov">Моја аптека</div>
+
+    <br>
+
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div>
+
+    <button class="registracija" onclick="location.href= 'najavailireg.html';" id = "dugmereg">Најaва Регистрација</button>
+<br>
+    <span class = "lokacija" id = "dugmelokacija">Внесете ја вашата локација</span>
+<br>
+    <div id="lokadresa" >
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12183.513153086053!2d21.402522697508573!3d42.003049360767264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sen!2smk!4v1608492892274!5m2!1sen!2smk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+<br>
+    <div class = "tip">
+        <button id = "peski" onclick="location.href='https://www.google.com/maps/dir///@42.003049,21.402523,14z/data=!4m2!4m1!3e2?hl=en';"><img src="peski.png" height="150" width="150"/></a> </button>
+        <button id = "tocak" onclick="location.href='https://www.google.com/maps/dir///@42.003049,21.402523,14z/data=!4m2!4m1!3e1?hl=en';"><img src="tocak.png" height="150" width="150"/></button>
+        <button id = "kola" onclick="location.href='https://www.google.com/maps/dir///@42.003049,21.402523,14z/data=!4m2!4m1!3e0?hl=en';"><img src="kola.png" height="150" width="150"/></button>
+    </div>
+
+    <button class = "potvrdi">Потврди</button>
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    //dt.format("dddd, hh:mm  ");
+    $("#dugmelokacija").click(function() {
+        $("#lokadresa").show();
+    });
+</script>
+</html>
