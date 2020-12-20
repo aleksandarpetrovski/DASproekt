@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рути</title>
+    <style>
+        .naslov{
+            background: red;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-family: Arial;
+
+        }
+        .vreme{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            font-family: Arial;
+            background: red;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            left: 50px;
+        }
+
+        .profil{
+            display: inline;
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            width: 200px;
+            background: red;
+            color: white;
+            left: 850px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-family: Arial;
+            border-color: red;
+        }
+
+        .ruti{
+            position: relative;
+            width: 400px;
+            padding-top: 30px;
+            left: 50px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Arial;
+            padding-bottom: 30px;
+        }
+
+        .pocetok{
+            display: inline;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial;
+            padding-left: 25px;
+            padding-right: 150px;
+        }
+
+        .vremetraenje{
+            display: inline;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial;
+            padding-right: 50px;
+        }
+
+        .dolzina{
+            display: inline;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial;
+            padding-right: 50px;
+        }
+
+        .sredstvo{
+            display: inline;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class = "naslov">Моја аптека</div>
+
+    <br>
+
+    <div class = "vreme">
+        <span id = "datetime"></span>
+    </div> <br>
+    <button class = "profil" onclick="location.href='profile.html';">Профил</button>
+<br>
+
+    <div class="ruti">Зачувани рути: </div>
+<br>
+
+    <div class = "pocetok">Почеток </div>
+    <div class = "vremetraenje">Времетраење </div>
+    <div class = "dolzina">Должина </div>
+    <div class = "sredstvo">Превозно средство </div>
+
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    dt.format('DD M YYYY | hh:mm')
+</script>
+</html>
