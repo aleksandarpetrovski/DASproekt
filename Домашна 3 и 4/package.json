@@ -1,0 +1,13 @@
+{
+  "name": "domasna-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "postinstall": "npm install --prefix backend && npm install mysql2 --prefix backend"
+  },
+  "author": "",
+  "license": "ISC"
+}

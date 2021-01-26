@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+          window.onload = function() {
+            if (localStorage.getItem('user'))
+                document.getElementById('logreg').remove();
+                document.querySelector('.registracija').remove();
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Моја аптека</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            position: absolute;
+            top: 10px;
+            bottom: 0;
+            left: -100px;
+            width: 900px;
+            height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+    <div class="naslov">Моја аптека</div>
+    <nav>
+        <ul>
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a id="logreg" href="najavailireg.html">
+                <li>Login/Register</li>
+            </a>
+            <a href="svojprofil.html">
+                <li>Profile</li>
+            </a>
+            
+        </ul>
+    </nav>
+    </header>
+
+    <br>
+
+    <div class="vreme">
+        <span id="datetime"></span>
+    </div>
+
+    <button class="registracija" onclick="location.href= 'najavailireg.html';" id="dugmereg">Најaва
+        Регистрација</button>
+    <br>
+
+    <div class="prevozno">Одберете превозно средство</div>
+
+    <div class="legend">
+        <div id="greendot"></div> <span class="apteki-naslov">Ваша локација</span>
+    </div>
+
+    <div class="legend">
+        <div id="reddot"></div> <span class="apteki-naslov">Аптеки</span>
+    </div>
+
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(drawMap);
+            } else {
+                return;
+            }
+        }
+
+        function drawMap(position) {
+            funk([position.coords.longitude, position.coords.latitude]);
+        }
+    </script>
+    <br>
+    <div id="lokadresa">
+        <div id='map'></div>
+        <div id="instructions"></div>
+        <script src="scripts/mapbox.js">
+        </script>
+    </div>
+    <br>
+    <div class="tip">
+        <button id="peski" onclick="changeType(this.id)"><img src="images/peski.png" height="150" width="150" /></a>
+        </button>
+        <button id="tocak" onclick="changeType(this.id)"><img src="images/tocak.png" height="150"
+                width="150" /></button>
+        <button id="kola" onclick="changeType(this.id)"><img src="images/kola.png" height="150" width="150" /></button>
+        <div id="prevozno-div">
+            Превозно средство:
+        </div>
+    </div>
+    <!-- <button class = "potvrdi">Потврди</button> -->
+    <span class="lokacija" id="dugmelokacija" onclick="getLocation(); ">Кликнете овде за вашата локација</span>
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    //dt.format("dddd, hh:mm  ");
+    $("#dugmelokacija").click(function () {
+        $("#lokadresa").show();
+    });
+</script>
+
+</html>
